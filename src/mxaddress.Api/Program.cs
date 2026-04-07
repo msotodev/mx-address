@@ -1,41 +1,57 @@
-var builder = WebApplication.CreateBuilder(args);
+using EssentialLayer.SQLite;
+using Microsoft.OpenApi;
+using mxaddress.Application;
+using mxaddress.Infrastructure;
+using mxaddress.Infrastructure.Extensions;
+using static mxaddress.Application.Constants.DefaultConstant;
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSQLiteInstance(
+	LOCAL_DB,
+	databasePathFactory: provider => Path.Combine(Directory.GetCurrentDirectory(), $"{LOCAL_DB}.db3")
+);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-var app = builder.Build();
+builder.Services.AddInfrastructure();
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(ApplicationAssemblyMarker).Assembly));
+
+builder.Services.AddControllers();
+
+builder.Services.AddSwaggerGen(
+	c =>
+	{
+		c.SwaggerDoc("v1", new OpenApiInfo { Title = "MX Address API", Version = "v1" });
+
+		c.AddSecurityDefinition(
+			"Bearer", new OpenApiSecurityScheme
+			{
+				In = ParameterLocation.Header,
+				Description = "Por favor ingresa el token JWT con 'Bearer {token}'",
+				Name = "Authorization",
+				Type = SecuritySchemeType.ApiKey
+			}
+		);
+	}
+);
+
+WebApplication app = builder.Build();
+
+await app.Services.InitializeDatabaseAsync();
+
+app.MapControllers();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+	app.MapOpenApi();
 }
+
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "v1"));
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

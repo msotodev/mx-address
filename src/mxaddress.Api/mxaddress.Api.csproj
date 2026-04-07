@@ -8,10 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.1.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\mxaddress.Application\mxaddress.Application.csproj" />
+    <ProjectReference Include="..\mxaddress.Infrastructure\mxaddress.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
