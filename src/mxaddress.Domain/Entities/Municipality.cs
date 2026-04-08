@@ -4,7 +4,7 @@
 	{
 		public string Name { get; set; } = string.Empty;
 
-		public int Code { get; set; }
+		public string Key { get; set; } = string.Empty;
 
 		public int StateId { get; set; }
 	}

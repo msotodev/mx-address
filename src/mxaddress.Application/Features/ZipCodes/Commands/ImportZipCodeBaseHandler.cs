@@ -7,14 +7,14 @@ using static mxaddress.Application.Features.ZipCodes.Commands.ImportZipCodesComm
 
 namespace mxaddress.Application.Features.ZipCodes.Commands
 {
-	public class ImportZipCodesHandler(
+	public class ImportZipCodeBaseHandler(
 		IAddressFileParser addressFileParser,
-		IZipCodeWriteRepository zipCodeWriteRepository
-	) : IRequestHandler<ImportZipCodesCommand, Response>
+		IZipCodeBaseWriteRepository zipCodeWriteRepository
+	) : IRequestHandler<ImportZipCodeBaseCommand, Response>
 	{
-		public async Task<Response> Handle(ImportZipCodesCommand request, CancellationToken cancellationToken)
+		public async Task<Response> Handle(ImportZipCodeBaseCommand request, CancellationToken cancellationToken)
 		{
-            List<ZipCode> records = await addressFileParser.ParseAsync(request.stream).ToListAsync(cancellationToken);
+            List<ZipCodeBase> records = await addressFileParser.ParseAsync(request.stream).ToListAsync(cancellationToken);
 
 			return await zipCodeWriteRepository.ImportAsync(records);
 		}

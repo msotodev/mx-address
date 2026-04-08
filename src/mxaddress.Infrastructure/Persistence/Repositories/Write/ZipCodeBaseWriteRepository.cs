@@ -7,12 +7,12 @@ using static mxaddress.Application.Constants.DefaultConstant;
 
 namespace mxaddress.Infrastructure.Persistence.Repositories.Write
 {
-	internal class ZipCodeWriteRepository(
+	internal class ZipCodeBaseWriteRepository(
 		[FromKeyedServices(LOCAL_DB)] IDatabaseService database
-	) : IZipCodeWriteRepository
+	) : IZipCodeBaseWriteRepository
 	{
 		public Task<Response> ImportAsync(
-			IReadOnlyList<ZipCode> data
+			IReadOnlyList<ZipCodeBase> data
 		) => Task.FromResult(database.BulkInsert(data));
 	}
 }

@@ -1,16 +1,9 @@
-using EssentialLayer.SQLite;
 using Microsoft.OpenApi;
 using mxaddress.Application;
 using mxaddress.Infrastructure;
 using mxaddress.Infrastructure.Extensions;
-using static mxaddress.Application.Constants.DefaultConstant;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddSQLiteInstance(
-	LOCAL_DB,
-	databasePathFactory: provider => Path.Combine(Directory.GetCurrentDirectory(), $"{LOCAL_DB}.db3")
-);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

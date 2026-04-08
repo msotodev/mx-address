@@ -2,11 +2,11 @@
 using mxaddress.Domain.Entities;
 using System.Text;
 
-namespace mxaddress.Infrastructure.FileParsing
+namespace mxaddress.Infrastructure.Services
 {
 	internal class TxtAddressFileParser : IAddressFileParser
 	{
-		public async IAsyncEnumerable<ZipCode> ParseAsync(Stream stream)
+		public async IAsyncEnumerable<ZipCodeBase> ParseAsync(Stream stream)
 		{
 			Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -30,12 +30,23 @@ namespace mxaddress.Infrastructure.FileParsing
 				// d_codigo | d_asenta | d_tipo_asenta | D_mnpio | d_estado | d_ciudad | d_CP | c_estado | c_oficina | c_CP | c_tipo_asenta | c_mnpio | id_asenta_cpcons | d_zona | c_cve_ciudad
 				// 01000|San Ángel|Colonia|Álvaro Obregón|Ciudad de México|Ciudad de México|01001|09|01001||09|010|0001|Urbano|01
 
-				yield return new ZipCode
+				yield return new ZipCodeBase
 				{
 					Code = Format(columns[0]),
-					LocalityName = Format(columns[5]),
+					SettlementName = Format(columns[1]),
+					SettlementTypeName = Format(columns[2]),
 					MunicipalityName = Format(columns[3]),
-					StateName = Format(columns[4])
+					StateName = Format(columns[4]),
+					CityName = Format(columns[5]),
+					ZipCodeAddress = Format(columns[6]),
+					StateKey = Format(columns[7]),
+					OfficeZipCode = Format(columns[8]),
+					ZipCodeKey = Format(columns[9]),
+					SettlementTypeCode = Format(columns[10]),
+					MunicipalityKey = Format(columns[11]),
+					UniqueSettlementIdentifier = Format(columns[12]),
+					ZoneAddress = Format(columns[13]),
+					CityKey = Format(columns[14])
 				};
 			}
 		}

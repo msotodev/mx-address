@@ -13,6 +13,13 @@ namespace mxaddress.Api.Controllers
 		IMediator mediator
 	) : ControllerBase
 	{
+		/// <summary>
+		/// Information about the source of the data:
+		/// Base Url: https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx
+		/// Text plain URL: https://www.correosdemexico.gob.mx/datosabiertos/cp/cpdescarga.txt
+		/// </summary>
+		/// <returns></returns>
+
 		[HttpGet]
 		public async Task<IActionResult> GetAllAsync() => Ok(
 			await mediator.Send(new GetAllZipCodeQuery())
@@ -32,7 +39,7 @@ namespace mxaddress.Api.Controllers
 			if (file == null || file.Length == 0) return BadRequest("File is required");
 
 			Response result = await mediator.Send(
-				new ImportZipCodesCommand(file.OpenReadStream())
+				new ImportZipCodeBaseCommand(file.OpenReadStream())
 			);
 
 			return Ok(result);

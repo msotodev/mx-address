@@ -15,7 +15,7 @@ namespace mxaddress.Infrastructure.Persistence.Repositories.Read
 		public Task<IReadOnlyList<StateResponseDto>> GetAllAsync()
 		{
 			IReadOnlyList<StateResponseDto> result = queryDatabase.Query<StateResponseDto>(
-				$@"SELECT Id, Name, Abbreviation, Mnemonic FROM {EntityName}"
+				$@"SELECT Id, Name, Abbreviation, Shield, Flag, MapLocation FROM {EntityName}"
 			);
 
 			return Task.FromResult(result);
@@ -24,7 +24,7 @@ namespace mxaddress.Infrastructure.Persistence.Repositories.Read
 		public Task<StateResponseDto?> GetByNameAsync(string name)
 		{
 			StateResponseDto? first = queryDatabase.QueryFirst<StateResponseDto>(
-				$@"SELECT * FROM {EntityName}", name
+				$@"SELECT Id, Name, Abbreviation, Shield, Flag, MapLocation FROM {EntityName} WHERE Name = ?", name
 			);
 
 			return Task.FromResult(first);

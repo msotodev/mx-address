@@ -3,8 +3,8 @@ using mxaddress.Domain.Entities;
 
 namespace mxaddress.Application.Features.ZipCodes.Interfaces
 {
-	public interface IZipCodeWriteRepository
+	public interface IZipCodeBaseWriteRepository
 	{
-		Task<Response> ImportAsync(IReadOnlyList<ZipCode> data);
+		Task<Response> ImportAsync(IReadOnlyList<ZipCodeBase> data);
 	}
 }

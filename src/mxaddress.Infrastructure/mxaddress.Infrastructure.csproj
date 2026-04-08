@@ -5,7 +5,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EssentialLayer.SQLite" Version="1.1.0" />
+    <Reference Include="EssentialLayer.SQLite">
+      <HintPath>..\..\..\..\EssentialLayers\EssentialLayer.SQLite\EssentialLayer.SQLite\bin\Release\netstandard2.1\EssentialLayer.SQLite.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <PropertyGroup>

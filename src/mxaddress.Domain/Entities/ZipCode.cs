@@ -4,10 +4,20 @@
 	{
 		public string Code { get; set; } = string.Empty;
 
-		public string StateName { get; set; } = string.Empty;
+		public int StateId { get; set; }
 
-		public string MunicipalityName { get; set; } = string.Empty;
+		public int MunicipalityId { get; set; }
 
-		public string LocalityName { get; set; } = string.Empty;
+		public int SettlementId { get; set; }
+
+		public string ZipCodeAddress { get; set; } = string.Empty;
+
+		public string OfficeZipCode { get; set; } = string.Empty;
+
+		public string CityName { get; set; } = string.Empty;
+
+		public string ZoneAddress { get; set; } = string.Empty;
+
+		public string CityKey { get; set; } = string.Empty;
 	}
 }

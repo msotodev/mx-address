@@ -1,0 +1,174 @@
+[
+	{
+		"name": "Aguascalientes",
+		"stateId": 1
+	},
+	{
+		"name": "Mexicali",
+		"stateId": 2
+	},
+	{
+		"name": "Tijuana",
+		"stateId": 2
+	},
+	{
+		"name": "La Paz",
+		"stateId": 3
+	},
+	{
+		"name": "San Francisco de Campeche",
+		"stateId": 4
+	},
+	{
+		"name": "Tuxtla Gutiérrez",
+		"stateId": 5
+	},
+	{
+		"name": "Chihuahua",
+		"stateId": 6
+	},
+	{
+		"name": "Ciudad Juárez",
+		"stateId": 6
+	},
+	{
+		"name": "Iztapalapa",
+		"stateId": 7
+	},
+	{
+		"name": "Saltillo",
+		"stateId": 8
+	},
+	{
+		"name": "Colima",
+		"stateId": 9
+	},
+	{
+		"name": "Manzanillo",
+		"stateId": 9
+	},
+	{
+		"name": "Victoria de Durango",
+		"stateId": 10
+	},
+	{
+		"name": "Guanajuato",
+		"stateId": 11
+	},
+	{
+		"name": "León de los Aldama",
+		"stateId": 11
+	},
+	{
+		"name": "Acapulco de Juárez",
+		"stateId": 12
+	},
+	{
+		"name": "Chilpancingo de los Bravo",
+		"stateId": 12
+	},
+	{
+		"name": "Pachuca de Soto",
+		"stateId": 13
+	},
+	{
+		"name": "Guadalajara",
+		"stateId": 14
+	},
+	{
+		"name": "Toluca de Lerdo",
+		"stateId": 15
+	},
+	{
+		"name": "Ecatepec de Morelos",
+		"stateId": 15
+	},
+	{
+		"name": "Morelia",
+		"stateId": 16
+	},
+	{
+		"name": "Cuernavaca",
+		"stateId": 17
+	},
+	{
+		"name": "Tepic",
+		"stateId": 18
+	},
+	{
+		"name": "Monterrey",
+		"stateId": 19
+	},
+	{
+		"name": "Oaxaca de Juárez",
+		"stateId": 20
+	},
+	{
+		"name": "Puebla de Zaragoza",
+		"stateId": 21
+	},
+	{
+		"name": "Santiago de Querétaro",
+		"stateId": 22
+	},
+	{
+		"name": "Chetumal",
+		"stateId": 23
+	},
+	{
+		"name": "Cancún",
+		"stateId": 23
+	},
+	{
+		"name": "San Luis Potosí",
+		"stateId": 24
+	},
+	{
+		"name": "Culiacán Rosales",
+		"stateId": 25
+	},
+	{
+		"name": "Hermosillo",
+		"stateId": 26
+	},
+	{
+		"name": "Villahermosa",
+		"stateId": 27
+	},
+	{
+		"name": "Ciudad Victoria",
+		"stateId": 28
+	},
+	{
+		"name": "Reynosa",
+		"stateId": 28
+	},
+	{
+		"name": "Tlaxcala de Xicohténcatl",
+		"stateId": 29
+	},
+	{
+		"name": "San Pablo del Monte",
+		"stateId": 29
+	},
+	{
+		"name": "Xalapa-Enríquez",
+		"stateId": 30
+	},
+	{
+		"name": "Veracruz",
+		"stateId": 30
+	},
+	{
+		"name": "Mérida",
+		"stateId": 31
+	},
+	{
+		"name": "Guadalupe",
+		"stateId": 32
+	},
+	{
+		"name": "Zacatecas",
+		"stateId": 32
+	}
+]

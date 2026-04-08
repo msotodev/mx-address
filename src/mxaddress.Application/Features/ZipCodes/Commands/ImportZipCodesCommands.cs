@@ -5,6 +5,6 @@ namespace mxaddress.Application.Features.ZipCodes.Commands
 {
 	public class ImportZipCodesCommands
 	{
-		public record ImportZipCodesCommand(Stream stream) : IRequest<Response>;
+		public record ImportZipCodeBaseCommand(Stream stream) : IRequest<Response>;
 	}
 }

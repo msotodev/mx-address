@@ -1,9 +1,7 @@
 ﻿namespace mxaddress.Domain.Entities
 {
-	public class Settlement : Entity
+	public class SettlementType : Entity
 	{
 		public string Name { get; set; } = string.Empty;
-
-        public int SettlementTypeId { get; set; }
 	}
 }
