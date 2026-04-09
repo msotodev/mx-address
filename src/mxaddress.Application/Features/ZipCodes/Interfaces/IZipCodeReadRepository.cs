@@ -6,6 +6,6 @@ namespace mxaddress.Application.Features.ZipCodes.Interfaces
 	{
 		Task<IReadOnlyList<ZipCodeResponseDto>> GetAllAsync();
 
-		Task<ZipCodeResponseDto?> GetByCodeAsync(string code);
+		Task<IReadOnlyList<ZipCodeResponseDto>> GetByCodeAsync(string code);
 	}
 }

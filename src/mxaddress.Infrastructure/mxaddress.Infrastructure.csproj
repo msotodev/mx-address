@@ -4,12 +4,6 @@
     <ProjectReference Include="..\mxaddress.Application\mxaddress.Application.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="EssentialLayer.SQLite">
-      <HintPath>..\..\..\..\EssentialLayers\EssentialLayer.SQLite\EssentialLayer.SQLite\bin\Release\netstandard2.1\EssentialLayer.SQLite.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

@@ -12,8 +12,14 @@
 
 		public string MunicipalityName { get; set; } = string.Empty;
 
-		public int LocalityId { get; set; }
+		public int SettlementId { get; set; }
 
-		public string LocalityName { get; set; } = string.Empty;
+		public string SettlementName { get; set; } = string.Empty;
+
+		public int CityId { get; set; }
+
+		public string CityName { get; set; } = string.Empty;
+
+		public string Zone { get; set; } = string.Empty;
 	}
 }

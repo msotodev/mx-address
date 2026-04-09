@@ -7,14 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EssentialLayer.SQLite" Version="1.2.0" />
     <PackageReference Include="EssentialLayers" Version="1.7.2" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.10.196-beta" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="EssentialLayer.SQLite">
-      <HintPath>..\..\..\..\EssentialLayers\EssentialLayer.SQLite\EssentialLayer.SQLite\bin\Release\netstandard2.1\EssentialLayer.SQLite.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

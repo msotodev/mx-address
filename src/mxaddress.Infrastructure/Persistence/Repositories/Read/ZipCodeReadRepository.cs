@@ -10,23 +10,30 @@ namespace mxaddress.Infrastructure.Persistence.Repositories.Read
 		[FromKeyedServices(LOCAL_DB)] IQueryDatabaseService queryDatabase
 	) : IZipCodeReadRepository
 	{
-		private const string EntityName = "ZipCode";
+		private const string QUERY_ALL = $@"SELECT ZC.Code, ZC.StateId, S.Name AS StateName,
+			ZC.MunicipalityId, M.Name AS MunicipalityName, ZC.SettlementId, SE.Name AS SettlementName,
+			ZC.CityId, C.Name AS CityName, CASE WHEN ZC.IsUrban = 1 THEN 'Urbano' ELSE 'Rural' END AS Zone
+		FROM ZipCode ZC
+			INNER JOIN State S ON S.Id = ZC.StateId
+			INNER JOIN Municipality M ON M.Id = ZC.MunicipalityId
+			INNER JOIN Settlement SE ON SE.Id = ZC.SettlementId
+			INNER JOIN City C ON C.Id = ZC.CityId";
+
+		private static string QUERY_BY_CODE(string code) => $"{QUERY_ALL}\nWHERE Code LIKE '%{code}%'";
 
 		public Task<IReadOnlyList<ZipCodeResponseDto>> GetAllAsync()
 		{
-			IReadOnlyList<ZipCodeResponseDto> response = queryDatabase.Query<ZipCodeResponseDto>(
-				$@"SELECT Id, Code, StateName, MunicipalityName, LocalityName FROM {EntityName}"
+			IReadOnlyList<ZipCodeResponseDto> result = queryDatabase.Query<ZipCodeResponseDto>(
+				QUERY_ALL
 			);
 
-			return Task.FromResult(response);
+			return Task.FromResult(result);
 		}
 
-		public Task<ZipCodeResponseDto?> GetByCodeAsync(string code)
+		public Task<IReadOnlyList<ZipCodeResponseDto>> GetByCodeAsync(string code)
 		{
-			ZipCodeResponseDto? result = queryDatabase.QueryFirst<ZipCodeResponseDto>(
-				$@"SELECT Id, Code, StateName, MunicipalityName, LocalityName
-					FROM {EntityName}
-				WHERE Code LIKE '%{code}%'"
+			IReadOnlyList<ZipCodeResponseDto> result = queryDatabase.Query<ZipCodeResponseDto>(
+				QUERY_BY_CODE(code)
 			);
 
 			return Task.FromResult(result);

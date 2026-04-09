@@ -28,7 +28,7 @@ namespace mxaddress.Api.Controllers
 		[HttpGet("{code}")]
 		public async Task<IActionResult> GetAsync(string code)
 		{
-			ZipCodeResponseDto result = await mediator.Send(new GetZipCodeQuery(code));
+			IReadOnlyList<ZipCodeResponseDto> result = await mediator.Send(new GetZipCodeQuery(code));
 
 			return Ok(result);
 		}

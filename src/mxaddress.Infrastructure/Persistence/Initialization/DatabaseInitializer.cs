@@ -14,8 +14,6 @@ namespace mxaddress.Infrastructure.Persistence.Initialization
 	{
 		public Task InitializeAsync()
 		{
-			databaseService.Reset();
-
 			Drop();
 			Create();
 
@@ -25,6 +23,7 @@ namespace mxaddress.Infrastructure.Persistence.Initialization
 		private void Create()
 		{
 			databaseService.Create<CapitalState>();
+			databaseService.Create<City>();
 			databaseService.Create<Municipality>();
 			databaseService.Create<Settlement>();
 			databaseService.Create<SettlementType>();
@@ -36,6 +35,7 @@ namespace mxaddress.Infrastructure.Persistence.Initialization
 		private void Drop()
 		{
 			databaseService.Drop<CapitalState>();
+			databaseService.Drop<City>();
 			databaseService.Drop<Municipality>();
 			databaseService.Drop<Settlement>();
 			databaseService.Drop<SettlementType>();

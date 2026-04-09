@@ -10,14 +10,8 @@
 
 		public int SettlementId { get; set; }
 
-		public string ZipCodeAddress { get; set; } = string.Empty;
+		public int CityId { get; set; }
 
-		public string OfficeZipCode { get; set; } = string.Empty;
-
-		public string CityName { get; set; } = string.Empty;
-
-		public string ZoneAddress { get; set; } = string.Empty;
-
-		public string CityKey { get; set; } = string.Empty;
+		public bool IsUrban { get; set; }
 	}
 }

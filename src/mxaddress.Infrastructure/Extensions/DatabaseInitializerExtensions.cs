@@ -13,7 +13,7 @@ namespace mxaddress.Infrastructure.Extensions
 
 			DatabaseInitializer initializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
 
-			await initializer.InitializeAsync();
+			//await initializer.InitializeAsync();
 		}
 	}
 }

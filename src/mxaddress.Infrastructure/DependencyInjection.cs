@@ -1,7 +1,7 @@
 ﻿using EssentialLayer.SQLite;
 using Microsoft.Extensions.DependencyInjection;
 using mxaddress.Application.Abstractions;
-using mxaddress.Application.Features.Locality.Interfaces;
+using mxaddress.Application.Features.City.Interfaces;
 using mxaddress.Application.Features.Municipality.Interfaces;
 using mxaddress.Application.Features.States.Interfaces;
 using mxaddress.Application.Features.ZipCodes.Interfaces;
@@ -31,7 +31,7 @@ namespace mxaddress.Infrastructure
 			services.AddScoped<DatabaseInitializer>();
 			services.AddScoped<IAddressFileParser, TxtAddressFileParser>();
 
-			services.AddScoped<ILocalityReadRepository, LocalityReadRepository>();
+			services.AddScoped<ICityReadRepository, CityReadRepository>();
 			services.AddScoped<IMunicipalityReadRepository, MunicipalityReadRepository>();
 			services.AddScoped<IStateReadRepository, StateReadRepository>();
 			services.AddScoped<IZipCodeReadRepository, ZipCodeReadRepository>();

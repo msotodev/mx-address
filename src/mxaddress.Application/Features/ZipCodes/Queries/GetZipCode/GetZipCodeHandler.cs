@@ -7,9 +7,9 @@ namespace mxaddress.Application.Features.ZipCodes.Queries.GetZipCode
 {
 	public class GetZipCodeHandler(
 		IZipCodeReadRepository repository
-	) : IRequestHandler<GetZipCodeQuery, ZipCodeResponseDto?>
+	) : IRequestHandler<GetZipCodeQuery, IReadOnlyList<ZipCodeResponseDto>>
 	{
-		public Task<ZipCodeResponseDto?> Handle(GetZipCodeQuery request, CancellationToken cancellationToken)
+		public Task<IReadOnlyList<ZipCodeResponseDto>> Handle(GetZipCodeQuery request, CancellationToken cancellationToken)
 		{
 			return repository.GetByCodeAsync(request.code);
 		}
