@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EssentialLayer.SQLite" Version="1.2.0" />
     <PackageReference Include="EssentialLayers" Version="1.7.2" />
   </ItemGroup>
 

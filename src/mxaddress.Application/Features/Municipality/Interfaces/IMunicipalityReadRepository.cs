@@ -6,6 +6,8 @@ namespace mxaddress.Application.Features.Municipality.Interfaces
 	{
 		Task<IReadOnlyList<MunicipalityResponseDto>> GetAllAsync();
 
-		Task<MunicipalityResponseDto?> GetByNameAsync(string name);
+		Task<IReadOnlyList<MunicipalityResponseDto>> GetByStateKeyAsync(string stateKey);
+
+		Task<IReadOnlyList<MunicipalityResponseDto>> GetByStateNameAsync(string stateName);
 	}
 }

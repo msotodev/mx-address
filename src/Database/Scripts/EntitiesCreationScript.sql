@@ -1,0 +1,85 @@
+-- Entities Creation
+
+DROP TABLE IF EXISTS City;
+
+CREATE TABLE City (
+	"Name" VARCHAR,
+	"Key" VARCHAR,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS SettlementType;
+
+CREATE TABLE SettlementType (
+	"Name" VARCHAR,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS State;
+
+CREATE TABLE State (
+	"Name" VARCHAR,
+	"Key" VARCHAR,
+	"Abbreviation" VARCHAR,
+	"Shield" VARCHAR,
+	"Flag" VARCHAR,
+	"MapLocation" VARCHAR,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS CapitalState;
+
+CREATE TABLE CapitalState (
+	"Name" VARCHAR,
+	"StateId" INTEGER,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS Municipality;
+
+CREATE TABLE Municipality (
+	"Name" VARCHAR,
+	"Key" VARCHAR,
+	"StateId" INTEGER,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS Settlement;
+
+CREATE TABLE Settlement (
+	"Name" VARCHAR,
+	"SettlementTypeId" INTEGER,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS ZipCode;
+
+CREATE TABLE ZipCode (
+	"Code" VARCHAR,
+	"StateId" INTEGER,
+	"MunicipalityId" INTEGER,
+	"SettlementId" INTEGER,
+	"CityId" INTEGER,
+	"IsUrban" INTEGER,
+	"Id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+DROP TABLE IF EXISTS ZipCodeBase;
+
+CREATE TABLE ZipCodeBase (
+	"Code" VARCHAR,
+	"SettlementName" VARCHAR,
+	"SettlementTypeName" VARCHAR,
+	"MunicipalityName" VARCHAR,
+	"StateName" VARCHAR,
+	"CityName" VARCHAR,
+	"ZipCodeAddress" VARCHAR,
+	"StateKey" VARCHAR,
+	"OfficeZipCode" VARCHAR,
+	"ZipCodeKey" VARCHAR,
+	"SettlementTypeCode" VARCHAR,
+	"MunicipalityKey" VARCHAR,
+	"UniqueSettlementIdentifier" VARCHAR,
+	"ZoneAddress" VARCHAR,
+	"CityKey" VARCHAR
+);

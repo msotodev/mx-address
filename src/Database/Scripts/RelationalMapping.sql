@@ -1,3 +1,5 @@
+-- Relational Mapping
+
 DELETE FROM ZipCodeBase WHERE '' IN (CityName, MunicipalityName, SettlementName, StateName);
 
 INSERT INTO Municipality (Name, Key, StateId)

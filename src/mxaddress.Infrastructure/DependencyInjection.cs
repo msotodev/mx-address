@@ -28,8 +28,9 @@ namespace mxaddress.Infrastructure
 
 			services.AddScoped<IDeviceInfo, DeviceInfoService>();
 
-			services.AddScoped<DatabaseInitializer>();
+			services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
 			services.AddScoped<IAddressFileParser, TxtAddressFileParser>();
+			services.AddScoped<IDatabaseStartupScript, DatabaseStartupScript>();
 
 			services.AddScoped<ICityReadRepository, CityReadRepository>();
 			services.AddScoped<IMunicipalityReadRepository, MunicipalityReadRepository>();

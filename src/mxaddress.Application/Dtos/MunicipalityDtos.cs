@@ -4,8 +4,12 @@
 	{
 		public int Id { get; set; }
 
-		public int Key { get; set; }
+		public string Key { get; set; } = string.Empty;
 
 		public string Name { get; set; } = string.Empty;
+
+		public int StateId { get; set; }
+
+		public string StateName { get; set; } = string.Empty;
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using mxaddress.Infrastructure.Persistence.Initialization;
+using mxaddress.Application.Abstractions;
 
 namespace mxaddress.Infrastructure.Extensions
 {
@@ -11,9 +11,9 @@ namespace mxaddress.Infrastructure.Extensions
 		{
 			using IServiceScope scope = services.CreateScope();
 
-			DatabaseInitializer initializer = scope.ServiceProvider.GetRequiredService<DatabaseInitializer>();
+			IDatabaseInitializer initializer = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
 
-			//await initializer.InitializeAsync();
+			await initializer.InitializeAsync();
 		}
 	}
 }

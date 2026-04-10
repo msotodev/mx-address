@@ -1,6 +1,6 @@
 [
 	{
-		"id": 1, 
+		"key": "01",
 		"name": "Aguascalientes",
 		"abbreviation": "AGU",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Coat_of_arms_of_Aguascalientes.svg",
@@ -8,7 +8,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Aguascalientes_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 2,
+		"key": "02",
 		"name": "Baja California",
 		"abbreviation": "BCN",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Coat_of_arms_of_Baja_California.svg",
@@ -16,7 +16,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Baja_California_in_Mexico.svg"
 	},
 	{
-		"id": 3,
+		"key": "03",
 		"name": "Baja California Sur",
 		"abbreviation": "BCS",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/d/da/Coat_of_arms_of_Baja_California_Sur.svg",
@@ -24,7 +24,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Baja_California_Sur_in_Mexico.svg"
 	},
 	{
-		"id": 4,
+		"key": "04",
 		"name": "Campeche",
 		"abbreviation": "CAM",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Coat_of_arms_of_Campeche.svg",
@@ -32,7 +32,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Campeche_in_Mexico.svg"
 	},
 	{
-		"id": 5,
+		"key": "05",
 		"name": "Chiapas",
 		"abbreviation": "CHP",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Coat_of_Arms_of_Chiapas_%282026%29.svg",
@@ -40,7 +40,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/2/26/Chiapas_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 6,
+		"key": "06",
 		"name": "Chihuahua",
 		"abbreviation": "CHH",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Coat_of_arms_of_Chihuahua.svg",
@@ -48,7 +48,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Chihuahua_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 7,
+		"key": "07",
 		"name": "Ciudad de México",
 		"abbreviation": "CDMX",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/2/21/Coat_of_arms_of_Mexico_City%2C_Mexico.svg",
@@ -56,7 +56,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/4/45/Mexico_%28city%29_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 8,
+		"key": "08",
 		"name": "Coahuila de Zaragoza",
 		"abbreviation": "COA",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Coat_of_arms_of_Coahuila.svg",
@@ -64,7 +64,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/5/57/Coahuila_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 9,
+		"key": "09",
 		"name": "Colima",
 		"abbreviation": "COL",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coat_of_arms_of_Colima.svg",
@@ -72,7 +72,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Colima_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 10,
+		"key": "10",
 		"name": "Durango",
 		"abbreviation": "DGO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coat_of_arms_of_Durango.svg",
@@ -80,7 +80,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Durango_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 11,
+		"key": "11",
 		"name": "Guanajuato",
 		"abbreviation": "GTO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Escudo_de_armas_de_la_Ciudad_y_Estado_de_Guanajuato.svg",
@@ -88,7 +88,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Guanajuato_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 12,
+		"key": "12",
 		"name": "Guerrero",
 		"abbreviation": "GRO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Coat_of_arms_of_Guerrero.svg",
@@ -96,7 +96,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/0/03/Guerrero_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 13,
+		"key": "13",
 		"name": "Hidalgo",
 		"abbreviation": "HGO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Escudo_del_Estado_Libre_y_Soberano_de_Hidalgo.png",
@@ -104,7 +104,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Hidalgo_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 14,
+		"key": "14",
 		"name": "Jalisco",
 		"abbreviation": "JAL",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Coat_of_arms_of_Jalisco.svg",
@@ -112,7 +112,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Jalisco_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 15,
+		"key": "15",
 		"name": "Estado de México",
 		"abbreviation": "MEX",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Coat_of_arms_of_Mexico_State.svg",
@@ -120,7 +120,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mexico_%28state%29_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 16,
+		"key": "16",
 		"name": "Michoacán de Ocampo",
 		"abbreviation": "MIC",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Escudo_del_Estado_de_Michoac%C3%A1n.svg",
@@ -128,7 +128,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Michoacan_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 17,
+		"key": "17",
 		"name": "Morelos",
 		"abbreviation": "MOR",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/0/01/Coat_of_arms_of_Morelos.svg",
@@ -136,7 +136,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/1/15/Morelos_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 18,
+		"key": "18",
 		"name": "Nayarit",
 		"abbreviation": "NAY",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coat_of_arms_of_Nayarit.svg",
@@ -144,7 +144,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/3/38/Nayarit_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 19,
+		"key": "19",
 		"name": "Nuevo León",
 		"abbreviation": "NLE",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Coat_of_arms_of_Nuevo_Leon.svg",
@@ -152,7 +152,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Nuevo_Leon_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 20,
+		"key": "20",
 		"name": "Oaxaca",
 		"abbreviation": "OAX",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Coat_of_arms_of_Oaxaca.svg",
@@ -160,7 +160,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/8/83/Oaxaca_in_Mexico.svg"
 	},
 	{
-		"id": 21,
+		"key": "21",
 		"name": "Puebla",
 		"abbreviation": "PUE",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Coat_of_arms_of_Puebla.svg",
@@ -168,7 +168,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Puebla_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 22,
+		"key": "22",
 		"name": "Querétaro",
 		"abbreviation": "QRO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/7/77/Coat_of_arms_of_Quintana_Roo.svg",
@@ -176,7 +176,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/8/87/Quintana_Roo_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 23,
+		"key": "23",
 		"name": "Quintana Roo",
 		"abbreviation": "QRO",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/7/77/Coat_of_arms_of_Quintana_Roo.svg",
@@ -184,7 +184,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/8/87/Quintana_Roo_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 24,
+		"key": "24",
 		"name": "San Luis Potosí",
 		"abbreviation": "SLP",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Coat_of_arms_of_San_Luis_Potosi.svg",
@@ -192,7 +192,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/4/48/San_Luis_Potosi_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 25,
+		"key": "25",
 		"name": "Sinaloa",
 		"abbreviation": "SIN",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Coat_of_arms_of_Sinaloa.svg",
@@ -200,7 +200,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/4/49/Sinaloa_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 26,
+		"key": "26",
 		"name": "Sonora",
 		"abbreviation": "SON",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Coat_of_arms_of_Sonora.svg",
@@ -208,7 +208,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Sonora_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 27,
+		"key": "27",
 		"name": "Tabasco",
 		"abbreviation": "TAB",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/7/74/Coat_of_arms_of_Tabasco.svg",
@@ -216,7 +216,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Tabasco_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 28,
+		"key": "28",
 		"name": "Tamaulipas",
 		"abbreviation": "TAM",
 		"shield": "",
@@ -224,7 +224,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Tamaulipas_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 29,
+		"key": "29",
 		"name": "Tlaxcala",
 		"abbreviation": "TLX",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/1/18/Coat_of_arms_of_Tlaxcala.svg",
@@ -232,7 +232,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Tlaxcala_in_Mexico_%28zoom%29.svg"
 	},
 	{
-		"id": 30,
+		"key": "30",
 		"name": "Veracruz de Ignacio de la Llave",
 		"abbreviation": "VER",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/8/84/Coat_of_arms_of_Veracruz.svg",
@@ -240,7 +240,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Veracruz_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 31,
+		"key": "31",
 		"name": "Yucatán",
 		"abbreviation": "YUC",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/5/54/Coat_of_arms_of_Yucatan.svg",
@@ -248,7 +248,7 @@
 		"mapLocation": "https://upload.wikimedia.org/wikipedia/commons/d/db/Yucatan_in_Mexico_%28location_map_scheme%29.svg"
 	},
 	{
-		"id": 32,
+		"key": "32",
 		"name": "Zacatecas",
 		"abbreviation": "ZAC",
 		"shield": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Escudo_de_armas_de_la_Ciudad_y_Estado_de_Zacatecas.svg",

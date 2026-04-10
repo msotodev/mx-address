@@ -1,5 +1,4 @@
 ﻿using EssentialLayer.SQLite.Interfaces;
-using EssentialLayers.Helpers.Extension;
 using Microsoft.Extensions.DependencyInjection;
 using mxaddress.Application.Abstractions;
 using mxaddress.Domain.Entities;
@@ -9,67 +8,59 @@ namespace mxaddress.Infrastructure.Persistence.Initialization
 {
 	internal class DatabaseInitializer(
 		[FromKeyedServices(LOCAL_DB)] IDatabaseService databaseService,
-		IDeviceInfo deviceInfo
-	)
+		IDatabaseStartupScript databaseStartup
+	) : IDatabaseInitializer
 	{
-		public Task InitializeAsync()
+		public async Task InitializeAsync()
 		{
-			Drop();
-			Create();
+			await CreateEntitiesAsync();
 
-			return InitialValuesAsync();
-		}
-
-		private void Create()
-		{
-			databaseService.Create<CapitalState>();
-			databaseService.Create<City>();
-			databaseService.Create<Municipality>();
-			databaseService.Create<Settlement>();
-			databaseService.Create<SettlementType>();
-			databaseService.Create<State>();
-			databaseService.Create<ZipCode>();
-			databaseService.Create<ZipCodeBase>();
-		}
-
-		private void Drop()
-		{
-			databaseService.Drop<CapitalState>();
-			databaseService.Drop<City>();
-			databaseService.Drop<Municipality>();
-			databaseService.Drop<Settlement>();
-			databaseService.Drop<SettlementType>();
-			databaseService.Drop<State>();
-			databaseService.Drop<ZipCode>();
-			databaseService.Drop<ZipCodeBase>();
-		}
-
-		private async Task InitialValuesAsync()
-		{
 			await SetStatesAsync();
 			await SetCapitalsAsync();
+			await SetZipCodeBase();
+
+			await RelationalMappingAsync();
+		}
+
+		private async Task CreateEntitiesAsync()
+		{
+			string[] scripts = await databaseStartup.EntitiesScriptAsync();
+
+			foreach (string script in scripts)
+			{
+				databaseService.Execute(script);
+			}
+		}
+
+		private async Task RelationalMappingAsync()
+		{
+			string[] scripts = await databaseStartup.MappingScriptsAsync();
+
+			foreach (string script in scripts)
+			{
+				databaseService.Execute(script);
+			}
 		}
 
 		private async Task SetStatesAsync()
 		{
-			string text = await File.ReadAllTextAsync(deviceInfo.StatesPath);
+			List<State> records = await databaseStartup.GetStateAsync();
 
-			IReadOnlyList<State>? values = text.Deserialize<IReadOnlyList<State>>();
-
-			if (values == null) return;
-
-			databaseService.BulkInsert(values);
+			databaseService.BulkInsert(records);
 		}
 
 		private async Task SetCapitalsAsync()
 		{
-			string text = await File.ReadAllTextAsync(deviceInfo.CapitalsPath);
+			List<CapitalState> records = await databaseStartup.GetCapitalStateAsync();
 
-			IReadOnlyList<CapitalState>? values = text.Deserialize<IReadOnlyList<CapitalState>>();
+			databaseService.BulkInsert(records);
+		}
 
-			if (values == null) return;
+		private async Task SetZipCodeBase()
+		{
+			List<ZipCodeBase> records = await databaseStartup.GetZipCodeBaseAsync();
 
-			databaseService.BulkInsert(values);
+			databaseService.BulkInsert(records);
 		}
 	}
 }

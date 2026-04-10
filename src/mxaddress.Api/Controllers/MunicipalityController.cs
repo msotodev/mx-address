@@ -18,5 +18,21 @@ namespace mxaddress.Api.Controllers
 
 			return Ok(result);
 		}
+
+		[HttpGet("{stateKey}")]
+		public async Task<IActionResult> GetByStateKey(string stateKey)
+		{
+			IReadOnlyList<MunicipalityResponseDto> result = await mediator.Send(new GetAllByKeyMunicipalityQuery(stateKey));
+
+			return Ok(result);
+		}
+
+		[HttpGet("state/{stateName}")]
+		public async Task<IActionResult> GetByStateName(string stateName)
+		{
+			IReadOnlyList<MunicipalityResponseDto> result = await mediator.Send(new GetAllByNameMunicipalityQuery(stateName));
+
+			return Ok(result);
+		}
 	}
 }

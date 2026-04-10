@@ -2,10 +2,14 @@
 {
 	public interface IDeviceInfo
 	{
+		string CapitalsPath { get; }
+
 		string ResourcesPath { get; }
 
-		string StatesPath { get; }
+		string EntitiesScriptPath { get; }
 
-		string CapitalsPath { get; }
+		string RelationalMappingScriptPath { get; }
+
+		string StatesPath { get; }
 	}
 }
