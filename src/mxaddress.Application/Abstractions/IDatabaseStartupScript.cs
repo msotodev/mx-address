@@ -13,5 +13,7 @@ namespace mxaddress.Application.Abstractions
 		Task<List<State>> GetStateAsync();
 
 		Task<List<ZipCodeBase>> GetZipCodeBaseAsync();
+
+		Task<string> ZipCodeBaseScript();
 	}
 }

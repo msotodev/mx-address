@@ -2,6 +2,8 @@
 using mxaddress.Application.Abstractions;
 using mxaddress.Application.Dtos;
 using mxaddress.Domain.Entities;
+using System.Reflection;
+using System.Text;
 
 namespace mxaddress.Infrastructure.Services
 {
@@ -64,6 +66,35 @@ namespace mxaddress.Infrastructure.Services
 			List<ZipCodeBase> records = await addressFileParser.ParseAsync(stream).ToListAsync(CancellationToken.None);
 
 			return records;
+		}
+
+		public async Task<string> ZipCodeBaseScript()
+		{
+			List<ZipCodeBase> zipCodes = await GetZipCodeBaseAsync();
+
+			return Template(zipCodes);
+		}
+
+		private string Template<T>(List<T> rows)
+		{
+			PropertyInfo[] properties = typeof(T).GetProperties();
+
+			string columnNames = string.Join(", ", properties.Select(p => p.Name));
+
+			StringBuilder columnValues = new();
+			int count = 0;
+
+			foreach (T row in rows)
+			{
+				string[] values = [.. properties.Select(p => $"'{p.GetValue(row)}'" ?? string.Empty)];
+				string stringValues = string.Join(", ", values);
+
+				columnValues.Append($"({stringValues}){(count < rows.Count - 1 ? "," : string.Empty)}");
+
+				count++;
+			}
+
+			return $"INSERT INTO {nameof(ZipCodeBase)} ({columnNames}) VALUES {columnValues}";
 		}
 	}
 }
