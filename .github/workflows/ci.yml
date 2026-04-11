@@ -1,22 +1,47 @@
 name: CI - SonarQube + Unit Tests
 
-# ✅ It's only executed when there's a merge (push) to the "test" branch
 on:
   push:
     branches:
       - test
+  pull_request:
+    branches:
+      - dev
 
 jobs:
+  # ── Light Job: only compile and tests (run in PRs to dev) ──
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Test
+        run: dotnet test --no-build --configuration Release
+
+  # ── Full Job: SonarQube + Tests (run in push to test) ────
   build-and-analyze:
     name: Build, Test & SonarQube Analysis
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'push'
     steps:
       # 1️⃣ Code checkout
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Necessary to SonarQube (history analysis)
+          fetch-depth: 0
 
       # 2️⃣ Configure Java (required for the Sonar scanner)
       - name: Set up JDK 17
@@ -29,7 +54,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x'  # It changes depending your version
+          dotnet-version: '10.0.x'
 
       # 4️⃣ Install SonarScanner to .NET
       - name: Install SonarCloud scanner
@@ -47,6 +72,7 @@ jobs:
             /o:"${{ secrets.SONAR_ORGANIZATION }}" \
             /d:sonar.host.url="https://sonarcloud.io" \
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" \
+            /d:sonar.projectBaseDir="${{ github.workspace }}" \
             /d:sonar.cs.opencover.reportsPaths="**/coverage.opencover.xml" \
             /d:sonar.exclusions="**/Migrations/**,**/obj/**,**/bin/**"
 
@@ -70,7 +96,7 @@ jobs:
       # 🔟 (Optional) Publish test results in GitHub
       - name: Upload test results
         uses: actions/upload-artifact@v4
-        if: always()  # Go up even if the test fail
+        if: always()
         with:
           name: test-results
           path: ./coverage
