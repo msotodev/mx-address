@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using mxaddress.Application.Dtos;
+using static mxaddress.Application.Features.Address.Queries.AddressQuery;
 
 namespace mxaddress.Api.Controllers
 {
@@ -10,9 +12,11 @@ namespace mxaddress.Api.Controllers
 	) : ControllerBase
 	{
 		[HttpGet]
-		public Task<IActionResult> GetAsync()
+		public async Task<IActionResult> GetAsync()
 		{
-			return Task.FromResult<IActionResult>(Ok("Hello World"));
+			IReadOnlyList<AddressResponseDto> result = await mediator.Send(new GetAllAddressQuery());
+
+			return Ok(result);
 		}
 	}
 }
