@@ -13,10 +13,10 @@ namespace mxaddress.Infrastructure.Services
 			using StreamReader reader = new(stream, Encoding.GetEncoding(1252));
 			int numberOfLine = 0;
 
-			while (!reader.EndOfStream)
-			{
-				string? line = await reader.ReadLineAsync();
+			string? line;
 
+			while ((line = await reader.ReadLineAsync()) != null)
+			{
 				if (string.IsNullOrWhiteSpace(line)) continue;
 
 				numberOfLine++;
