@@ -50,7 +50,7 @@ namespace mxaddress.Tests
 
 			// ASSERT
 			Assert.Single(result);
-			Assert.Equal("01000", result[0].Code);
+			Assert.Equal("010001", result[0].Code);
 			Assert.Equal("San Ángel", result[0].SettlementName);
 		}
 	}
